@@ -10,15 +10,15 @@ h3 {
   color: #ff6f00;
 }
 
-c.column1 {
+a.column1 {
   color: #FF6f00
-  bgcolor: #0F4FA8;
+  bgcolor= #0F4FA8;
 }
-c.column2 {
+a.column2 {
   color: #FF6f00
-  bgcolor: #05316D;
+  bgcolor= #05316D;
 }
-c.column3 {
+a.column3 {
   color: #FF6f00
-  bgcolor: #FFC740;
+  bgcolor= #FFC740;
 }
