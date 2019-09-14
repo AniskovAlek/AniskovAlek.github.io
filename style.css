@@ -10,6 +10,15 @@ h3 {
   color: #ff6f00;
 }
 
-td {
+c.column1 {
   color: #FF6f00
+  background: #0F4FA8;
+}
+c.column2 {
+  color: #FF6f00
+  background: #05316D;
+}
+c.column3 {
+  color: #FF6f00
+  background: #FFC740;
 }
