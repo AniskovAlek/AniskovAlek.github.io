@@ -12,13 +12,13 @@ h3 {
 
 c.column1 {
   color: #FF6f00
-  background: #0F4FA8;
+  bgcolor: #0F4FA8;
 }
 c.column2 {
   color: #FF6f00
-  background: #05316D;
+  bgcolor: #05316D;
 }
 c.column3 {
   color: #FF6f00
-  background: #FFC740;
+  bgcolor: #FFC740;
 }
