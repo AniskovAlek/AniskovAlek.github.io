@@ -14,15 +14,15 @@ td {
   color: #FF6f00;
 }
 
-a.column1 {
+.column1 {
   color: #FF6f00
   bgcolor= #0F4FA8;
 }
-a.column2 {
+.column2 {
   color: #FF6f00
   bgcolor= #05316D;
 }
-a.column3 {
+.column3 {
   color: #FF6f00
   bgcolor= #FFC740;
 }
