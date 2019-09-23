@@ -14,6 +14,7 @@ td {
   color: #FF6f00;
 }
 
+
 th.calendar {
   width: 40;
 }
@@ -26,4 +27,13 @@ th.calendar {
 }
 .column3 {
   background: #FFC740;
+}
+
+
+td.white{
+  background: #0F4FA8;
+}
+
+td.black{
+  background: #05316D;
 }
