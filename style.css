@@ -31,8 +31,12 @@ th.calendar {
 
 td.white{
   background: #0F4FA8;
+  width:  62px;
+  height: 62px;
 }
 
 td.black{
   background: #05316D;
+  width:  62px;
+  height: 62px;
 }
