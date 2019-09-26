@@ -2,6 +2,10 @@ body {
   background-color: #4575D4;
 }
 
+body.k{
+  background: url(background.jpg) center fixed no-repeat;
+}
+
 h1 {
   color: #29467f;
 }
