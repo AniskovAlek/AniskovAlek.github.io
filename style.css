@@ -2,6 +2,11 @@ body {
   background-color: #4575D4;
 }
 
+body.center{
+  margin-left:400px;
+  margin-right:400px;
+}
+
 body.k{
   background: url(background.jpg) center fixed no-repeat;
 }
