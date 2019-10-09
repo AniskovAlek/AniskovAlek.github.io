@@ -82,3 +82,44 @@ td.black{
   width:  62px;
   height: 62px;
 }
+
+div.hid{
+  border: 2px double #ff6f00;
+  background-color: #05316D;
+}
+
+div.area{
+  visibility: hidden;
+}
+
+div.area p::first-letter{
+  font-size: 40px;
+  color: #ff6f00;
+}
+
+div.area:target{
+  visibility: visible;
+}
+
+table.table{
+  display: none;
+  margin: auto;
+}
+
+table.table:target{
+  display: block;
+  margin:auto;
+}
+
+table.table tr:nth-child(even){
+ background-color: #0F4FA8;
+ color: #ff6f00;
+}
+
+table.table tr:last-child{
+ font-size: 50px;
+}
+
+table.table tr:first-child{
+ font-style: italic;
+}
