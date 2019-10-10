@@ -102,13 +102,15 @@ div.area:target{
 }
 
 table.table{
-  display: none;
   margin: auto;
 }
 
-table.table:target{
+div.h_area{
+  display: none;
+}
+
+div.h_area:target{
   display: block;
-  margin:auto;
 }
 
 table.table tr:nth-child(even){
@@ -117,9 +119,31 @@ table.table tr:nth-child(even){
 }
 
 table.table tr:last-child{
- font-size: 50px;
+ font-weight: bold;
 }
 
 table.table tr:first-child{
  font-style: italic;
+}
+
+.hidenhidden:target{
+  display: block;
+}
+
+.hidenhidden{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  opacity: 0.5;
+  background: white;
+}
+
+div.sdfds{
+  position: absolute;
+  top: 45%;
+  left: 48%;
 }
