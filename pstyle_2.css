@@ -7,6 +7,10 @@ li{
   font-size: 16px;
 }
 
+ul{
+  list-style-type:square;
+}
+
 table{
   text-align: left;
   text-indent: 0em;
@@ -54,6 +58,10 @@ div.c{
   text-indent: 0px;
   background: #FFE573;
   border: 1px solid black;
+}
+
+div.d{
+  align:middle;
 }
 
 img.a{
