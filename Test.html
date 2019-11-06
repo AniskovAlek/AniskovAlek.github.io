@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тест</title>
+    <link rel="stylesheet" href="pstyle_2.css">
+  </head>
+  <body>
+    <div class="a">
+    <form id="q1">
+      <p>1: Какая разница между правильными ответами на вопросы 4 и 7?</p></br>
+      <input type="radio" name="2"><span>1</span>
+      <input type="radio" name="2"><span>2</span>
+      <input type="radio" name="2"><span>3</span>
+      <input type="radio" name="2"><span>4</span>
+    </form>
+    <form id="q2">
+    </br><p>2: На какие нечётные слагаемые можно разложить правильный ответ на 8-1 вопрос?</p></br>
+      <input type="checkbox" name="1"><span>1</span>
+      <input type="checkbox" name="1"><span>3</span>
+      <input type="checkbox" name="1"><span>5</span>
+    </form>
+    <form id="q3">
+      </br><p>3: Какое количество правильных ответов в 10-м вопросе?</p></br>
+      <input type="radio" name="3"><span>1</span>
+      <input type="radio" name="3"><span>2</span>
+      <input type="radio" name="3"><span>3</span>
+      <input type="radio" name="3"><span>4</span>
+    </form>
+    <form id="q4">
+      </br><p>4: Чему равно произведение правильного ответа на 9-й вопрос и 2-ч, от которого отняли 6?</p></br>
+      <input type="radio" name="4"><span>6</span>
+      <input type="radio" name="4"><span>8</span>
+      <input type="radio" name="4"><span>10</span>
+      <input type="radio" name="4"><span>12</span>
+    </form>
+    <form id="q5">
+      </br><p>5: Чему равно отношение правильного ответа на 3-й вопрос и 2-х?</p></br>
+      <input type="radio" name="5"><span>2</span>
+      <input type="radio" name="5"><span>3</span>
+      <input type="radio" name="5"><span>4</span>
+      <input type="radio" name="5"><span>5</span>
+    </form>
+    <form id="q6">
+      </br><p>6: Какие вопросы не совпадают между собой в правильных ответах?</p></br>
+      <input type="checkbox" name="6"><span>1</span>
+      <input type="checkbox" name="6"><span>2</span>
+      <input type="checkbox" name="6"><span>3</span>
+      <input type="checkbox" name="6"><span>4</span>
+      <input type="checkbox" name="6"><span>5</span>
+    </form>
+    <form id="q7">
+      </br><p>7: Какая цифра меньше правильного ответа на 9-й вопрос, но больше правильного ответа на 3-й вопрос?</p></br>
+      <input type="radio" name="7"><span>2</span>
+      <input type="radio" name="7"><span>3</span>
+      <input type="radio" name="7"><span>4</span>
+      <input type="radio" name="7"><span>5</span>
+      <input type="radio" name="7"><span>6</span>
+    </form>
+    <form id="q8">
+      </br><p>8: Какой максимальный правильный ответ в других вопросах?</p></br>
+      <input type="radio" name="8"><span>1</span>
+      <input type="radio" name="8"><span>2</span>
+      <input type="radio" name="8"><span>3</span>
+      <input type="radio" name="8"><span>4</span>
+      <input type="radio" name="8"><span>5</span>
+      <input type="radio" name="8"><span>6</span>
+      <input type="radio" name="8"><span>7</span>
+    </form>
+    <form id="q9">
+      </br><p>9: Сумма правильных ответов на 2-й вопрос?</p></br>
+      <input type="radio" name="9"><span>1</span>
+      <input type="radio" name="9"><span>4</span>
+      <input type="radio" name="9"><span>6</span>
+      <input type="radio" name="9"><span>8</span>
+    </form>
+    <form id="q10">
+    </br><p>10: Какие правильные ответы в 10-м вопросе?</p></br>
+      <input type="checkbox" name="10"><span>1</span>
+      <input type="checkbox" name="10"><span>2</span>
+      <input type="checkbox" name="10"><span>3</span>
+      <input type="checkbox" name="10"><span>4</span>
+    </form>
+    <script type="text/javascript">
+      function check() {
+
+        var len=10;
+        var c1=["0","2"],c2=["0","1","2","3","4",],c3=["0","1","2","3"];
+        var a=["0",c1,"3","0","0",c2,"3","5","2",c3], sum = 0;
+        for (var i = 0; i < len; i++) {
+          if((i==1)||(i==5)||(i==9)){ if(ch_c(i+1,a[i])) sum=sum+1;}
+          else if (ch_r(i + 1, a[i])) sum=sum+1;
+        }
+        if(sum==10) alert("Правильно!");
+        else alert("Неправильно...");
+      }
+
+        function ch_r(nid,tr){
+        var x=document.forms["q"+nid];
+          return x.elements[tr].checked;
+
+      }
+        function ch_c(nid,tr){
+            var x=document.forms["q"+nid],f=true;
+            for(var i=0;i<tr.length;i++){ if (!(x.elements[tr[i]].checked)) f=false;}
+            return f;
+      }
+    </script>
+    <button onclick="check()">Итог</button>
+  </div>
+  </body>
