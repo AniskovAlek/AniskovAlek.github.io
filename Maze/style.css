@@ -1,0 +1,34 @@
+body {
+  background-color: #4575D4;
+}
+
+h1 {
+  color: #29467f;
+  text-align: center;
+}
+
+h3 {
+  color: #ff6f00;
+}
+
+td{
+  width: 50px;
+  height: 50px;
+  background-color: #29467f;
+}
+
+.res{
+  background: #6A92D4;
+}
+
+.wall{
+  background: #052C6E;
+}
+
+.fin {
+  background: #FFCE00;
+}
+
+.you{
+  background: #FF6A00;
+}
