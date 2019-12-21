@@ -106,12 +106,7 @@ function create_maze(width,height){
                 i=1;
             }
         }
-        //alert(j);
-        //alert(i);
-        //alert(b.className);
-        //tt=1;
     }
-    //alert("!");
     b=document.getElementById("c"+i+""+j);
     b.className="you";
     i_u=i;
