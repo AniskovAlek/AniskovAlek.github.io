@@ -3,12 +3,9 @@ body {
   margin: 0;
 }
 
-article {
-  display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
+
+
+
 
 .logo{
   padding: 15px;
@@ -40,7 +37,7 @@ hgroup{
 }
 
 .content{
-  width: 70%;
+  max-width: 1000px;
   margin: 0 auto;
   margin-top: 80px;
   top: 122px;
@@ -56,11 +53,10 @@ hgroup{
 }
 
 .blog{
-  width: 70%;
+  max-width: 700px;
   background-color: #6c8dd5;
   padding-top: 5px;
   padding-left: 30px;
-  padding-right: 30px;
   padding-bottom: 5px;
   margin: 10px 0px 10px 0px;
 }
@@ -97,30 +93,20 @@ hgroup{
 
 .menu_bar{
   position: absolute;
-  right: 5px;
+  right: 200px;
   height: 44px;
-  width: 150px;
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .menu_bar a{
-  border: 1px solid black;
   text-align: center;
+  width: 5em;
+  border: 1px solid black;
   text-decoration: none;
+  margin-top: 15px;
   height: 25px;
-  width: 50px;
-  border-radius: 5px;
-  color:#000;
-  background-color:#2a4580;
-}
-
-.menu{
-  border: 1px solid black;
-  text-align: center;
-  text-decoration: none;
   border-radius: 5px;
   color:#000;
   background-color:#2a4580;
@@ -140,29 +126,12 @@ span{
 }
 
 @media (max-width: 800px) {
-  .menu_bar[show="false"]{
+  .reg_but{
     display: none;
   }
-
-  .menu_bar[show="true"]{
-    background-color: #2a4580;
-    display: flex;
-    position: fixed;
-    top: 50px;
-    margin: 0;
-    height: auto;
-    right: 0px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  .log_but{
+    display: none;
   }
-
-  .menu_bar[show="true"] a{
-    width: 100%;
-    border-radius: 0px;
-  }
-
   .menu{
     display:block;
     right:60px;
@@ -173,6 +142,9 @@ span{
 @media (max-width: 400px) {
   #header{
     height: 44px;
+  }
+  .reg_but{
+    display: none;
   }
 
   .logo{
@@ -188,13 +160,15 @@ span{
     display: none;
   }
 
+  .log_but{
+    display: none;
+  }
+
   .content{
-    width: 100%;
     margin-top: 46px;
   }
 
   .blog{
-    width: 100%;
     margin: 0px 0px 2px 0px;
   }
   .menu{
@@ -202,8 +176,5 @@ span{
     right:5px;
     top:15px;
     position: fixed;
-  }
-  .menu_bar[show="true"]{
-    top: 40px;
   }
 }
