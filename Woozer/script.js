@@ -20,7 +20,7 @@ function blogs(xml){
   var i;
   xmlDoc= xml.responseXML;
   var str;
-  x=xmlDoc.getElementByTagName("hgroup");
+  x=xmlDoc.getElementsByTagName("hgroup");
   for(i=0;i<x.length;i++){
     str+="<hgroup class=&quot;blog&quot;> <span>"+
     x[i].getElementsByTagName("span")[0].childNodes[0].nodeValue +
