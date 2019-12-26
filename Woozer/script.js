@@ -28,9 +28,7 @@ function blogs(xml){
     x[i].getElementsByTagName("header")[0].childNodes[0].nodeValue +
     "</header><article class=&quot;blog_post&quot;>"+
     x[i].getElementsByTagName("article")[0].childNodes[0].nodeValue+
-    "</article><a href= "+
-    x[i].getElementsByTagName("a")[0].childNodes[0].nodeValue+
-    ">Подробнее</a></hgroup>";
+    "</article></hgroup>";
   }
   document.getElementById("con").innerHTML = str;
 }
