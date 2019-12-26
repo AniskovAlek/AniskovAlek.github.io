@@ -9,7 +9,7 @@ function load() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    myFunction(this);
+    blogs(this);
     }
   };
   xhttp.open("GET", "file.xml", true);
