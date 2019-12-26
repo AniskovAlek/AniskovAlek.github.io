@@ -172,10 +172,20 @@ span{
   .menu{
     display:block;
     right:60px;
-    top:15px;
+    top:25px;
     position: fixed;
   }
 }
+
+@media (max-width: 800px) {
+  .header_row{
+    min-width: 40%;
+  }
+  .menu{
+    right:10px;
+  }
+}
+
 @media (max-width: 400px) {
   #header{
     height: 44px;
