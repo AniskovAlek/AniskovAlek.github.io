@@ -24,7 +24,9 @@ function blogs(xml){
   for(i=0;i<x.length;i++){
     str+="<hgroup class=blog> <span>"+
     x[i].getElementsByTagName("span")[0].childNodes[0].nodeValue +
-    "</span><header class=title>" +
+    "<time>"+
+    x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue +
+    "</time></span><header class=title>" +
     x[i].getElementsByTagName("header")[0].childNodes[0].nodeValue +
     "</header><article class=blog_post>"+
     x[i].getElementsByTagName("article")[0].childNodes[0].nodeValue+
