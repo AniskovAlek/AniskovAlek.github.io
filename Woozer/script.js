@@ -30,7 +30,7 @@ function blogs(xml){
     x[i].getElementsByTagName("article")[0].childNodes[0].nodeValue+
     "</article><a href="+
     x[i].getElementsByTagName("a")[0].childNodes[0].nodeValue+
-    "></a></hgroup>";
+    ">Подробнее</a></hgroup>";
   }
   document.getElementById("con").innerHTML = str;
 }
