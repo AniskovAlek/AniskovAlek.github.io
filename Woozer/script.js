@@ -19,10 +19,10 @@ function load() {
 function blogs(xml){
   var i;
   xmlDoc= xml.responseXML;
-  var str;
+  var str="";
   x=xmlDoc.getElementsByTagName("hgroup");
   for(i=0;i<x.length;i++){
-    str="<hgroup class=blog> <span>"+
+    str+="<hgroup class=blog> <span>"+
     x[i].getElementsByTagName("span")[0].childNodes[0].nodeValue +
     "</span><header class=title>" +
     x[i].getElementsByTagName("header")[0].childNodes[0].nodeValue +
