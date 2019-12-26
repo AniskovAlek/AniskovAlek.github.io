@@ -28,7 +28,9 @@ function blogs(xml){
     x[i].getElementsByTagName("header")[0].childNodes[0].nodeValue +
     "</header><article class=blog_post>"+
     x[i].getElementsByTagName("article")[0].childNodes[0].nodeValue+
-    "</article></hgroup>";
+    "</article><a href="+
+    x[i].getElementsByTagName("a")[0].childNodes[0].nodeValue
+    +"></a></hgroup>";
   }
   document.getElementById("con").innerHTML = str;
 }
