@@ -10,6 +10,12 @@ article {
   flex-direction: row;
 }
 
+header {
+  font-size: 24px;
+  padding-top: 5px;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
 .htag{
   display: flex;
   flex: 1;
@@ -80,9 +86,7 @@ hgroup{
 }
 
 .title{
-  font-size: 24px;
-  padding-top: 5px;
-  font-family: Geneva, Arial, Helvetica, sans-serif;
+
 }
 
 .blog_post{
