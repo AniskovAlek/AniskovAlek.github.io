@@ -3,11 +3,17 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width,user-scalable=no"/>
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Woozer</title>
 </head>
-<body onload="load();">
+<body ng-app="myApp" ng-controller="customersCtrl" ng-init="auth=null">
 	<div class="content2">
 	<aside class="side_bar">
 		<div class="htag">
@@ -20,23 +26,89 @@
 		<span>&copy; А это копирайт!</span>
 	</aside>
 	</div>
-  <div id="header">
-	<header>
-    <a href="index.html" class="logo">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top d-flex" id="header" >
+    <a href="index.html" class="navbar-brand">
       <img src="woozer.png" class="img">
     </a>
-		<form>
-			<input class="header_row" placeholder="Искать" onsubmit="edit.html">
+		<form class="form-inline flex-grow-1 d-flex">
+			<input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Искать">
+			<button class="btn btn-info" type="submit">Search</button>
 		</form>
-		<div class="menu_bar" id="d1" show="false">
-		<a href="">Зарег.</a>
-		<a href="">Войти</a>
-	  </div>
-		<a class="menu" onclick="menu();">Меню</a>
-  </header>
-  </div>
-  <div class="content" id="con">
-  </div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+		<ul class="navbar-nav" ng-show="auth==null">
+			 <li class="nav-item">
+				 <button class="btn btn-info" role="button" ng-click="register();">Зарег.</a>
+			 </li>
+			 <li class="nav-item">
+				 <button class="btn btn-info" role="button" ng-click="myfunction();">Войти</button>
+			 </li>
+	  </ul>
+		<span ng-show="auth!=null">{{pers.username}}</span>
+</nav>
+<div class="testing d-flex flex-column" ng-show="show_input_login">
+<span class="header_login">Войти</span>
+<input class="form-control" ng-model="login" placeholder="Логин"></input></br>
+<input class="form-control" ng-model="password" placeholder="Пароль"></input></br>
+<button class="btn btn-info" role="button" ng-click="logining(login,password);">Подтвердить</button>
+</div>
+<div class="testing d-flex flex-column" ng-show="show_input_register">
+<span class="header_login">Зарегистрироваться</span>
+<input class="form-control" ng-model="login" placeholder="Логин"></input></br>
+<input class="form-control" ng-model="password" placeholder="Пароль"></input></br>
+<button class="btn btn-info" role="button" ng-click="registering(login,password);">Подтвердить</button>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+$http.get("http://localhost:1337/?query=list")
+.then(function (response) {
+	$scope.bl = response.data;
+});
 
+$scope.show_input_login=false;
+$scope.myfunction=function(){
+$scope.show_input_register=false;
+$scope.show_input_login=!$scope.show_input_login;
+}
+
+$scope.show_input_register=false;
+$scope.register=function(){
+$scope.show_input_login=false;
+$scope.show_input_register=!$scope.show_input_register;
+}
+
+$scope.logining=function(login,password){
+	var str="http://localhost:1337/?query=login&login="+login+"&password="+password;
+	$http.get(str)
+	.then(function (response) {
+		$scope.pers=response.data;
+		$scope.auth=$scope.pers.id;
+		$scope.show_input_login=false;
+	});
+};
+
+$scope.registering=function(login,password){
+	var str="http://localhost:1337/?query=register&login="+login+"&password="+password;
+	$http.get(str)
+	.then(function (response) {
+		$scope.pers=response.data;
+		$scope.auth=$scope.pers.id;
+		$scope.show_input_register=false;
+	});
+};
+
+});
+</script>
+  <div class="content" id="con" >
+		<div class="blog" ng-repeat="x in bl.blogs">
+			<span>{{x.span}}</span>
+			<time>{{x.time}}</time>
+			<header class="">{{x.header}}<header>
+			<article>{{x.article}}<article>
+			<a href ={{x.a}}>Подробнее</a>
+		</div>
+  </div>
 </body>
 </html>

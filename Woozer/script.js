@@ -9,15 +9,13 @@ function load() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-    //  alert(this)
-    //var myObj = JSON.parse(this);
-    //alert(myObj);
-    document.getElementById("con").innerHTML = this.responseText;
-    //alert(this);
-    //con_to_json(this);
+    var buf = JSON.parse(this.responseText);
+    var myObj= JSON.parse(buf);
+    alert(myObj);
+    blogs_in(myObj);
     }
   };
-  xhttp.open("GET", "file.php", true);
+  xhttp.open("GET", "http://localhost:1337/", true);
   xhttp.send();
 }
 
@@ -43,10 +41,17 @@ function con_to_json(xml){
 
 function blogs_in(json){
   var i;
-  var myObj;
-  alert(json[0]);
-  for(i=0;i<json.length;i++){
-    myObj = JSON.parse(json[i]);
-    document.getElementById("con").innerHTML = myObj;
+  var blogs=[];
+  blogs = json.blogs;
+  var str="";
+  for(x in blogs){
+    str+="<div class=blog>"+
+    "<span>"+blogs[x].span+"</span>"+
+    "<time>"+blogs[x].time+"</time>"+
+    "<header>"+blogs[x].header+"</header>"+
+    "<article>"+blogs[x].article+"</article>"+
+    "<a href ="+blogs[x].a+">Подробнее</a>"+
+    "</div>";
   }
+  document.getElementById("con").innerHTML = str;
 }
