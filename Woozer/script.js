@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-$http.get("http://26.17.129.233:1337/?query=list")//26.17.129.233
+$http.get("https://26.17.129.233:1337/?query=list")//26.17.129.233
 .then(function (response) {
 	$scope.bl = response.data;
 });
