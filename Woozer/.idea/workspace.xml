@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="355b5029-5e60-44a7-ab25-2665214518e4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1bRp33PvEYT09YhxK6Xlu87IRhP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Lina198.github.io" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="355b5029-5e60-44a7-ab25-2665214518e4" name="Default Changelist" comment="" />
+      <created>1588604563670</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588604563670</updated>
+      <workItem from="1588604579875" duration="6545000" />
+      <workItem from="1588611539611" duration="8000" />
+      <workItem from="1588642869921" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="580" y="231" key="FileChooserDialogImpl" timestamp="1588642924095">
+      <screen x="0" y="46" width="1600" height="854" />
+    </state>
+    <state x="580" y="231" key="FileChooserDialogImpl/0.46.1600.854@0.46.1600.854" timestamp="1588642924095" />
+  </component>
+</project>

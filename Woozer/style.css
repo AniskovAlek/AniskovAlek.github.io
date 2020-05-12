@@ -1,6 +1,7 @@
 body {
-  background: #4573d5;
   margin: 0;
+  background: url(fon.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 article {
@@ -9,26 +10,17 @@ article {
   flex-wrap: wrap;
   flex-direction: row;
 }
-
-header {
-  font-size: 24px;
-  padding-top: 5px;
-  font-family: Geneva, Arial, Helvetica, sans-serif;
-}
-
-.header_login{
-  text-align: center;
-  font-size: 16px;
-}
+.img{width: 100%;
+height: 100%;}
 
 .testing{
-  background-color: #6c8dd5;
-  position: fixed;
+  position: absolute;
   top: 60px;
-  right: 0px;
+  margin-left: 85%;
 }
 
 .htag{
+  width: 200px;
   display: flex;
   flex: 1;
   flex-wrap: wrap;
@@ -40,21 +32,6 @@ header {
   position: fixed;
 }
 
-#header{
-  top: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #6c8dd5;
-  position: fixed;
-}
-.img{
-  width: 50%;
-  height: 50%;
-}
-
-header{
-  display: block;
-}
 
 aside{
   display: block;
@@ -82,7 +59,6 @@ hgroup{
 
 .blog{
   width: 70%;
-  background-color: #6c8dd5;
   padding-top: 5px;
   padding-left: 30px;
   padding-right: 30px;
@@ -91,7 +67,6 @@ hgroup{
 }
 
 .side_bar{
-  background-color: #6c8dd5;
   margin-right: 400px;
   width: 200px;
   height: auto;
@@ -112,7 +87,6 @@ hgroup{
   max-width: 600px;
   left:150px;
   margin-top: 15px;
-  background: #2a4580;
   height: 25px;
   border-style: solid;
   border-radius: 15px;
@@ -130,27 +104,21 @@ hgroup{
 }
 
 .menu_bar a{
-  border: 1px solid black;
   text-align: center;
   text-decoration: none;
   height: 25px;
   width: 50px;
   border-radius: 5px;
-  color:#000;
-  background-color:#2a4580;
 }
 
 .menu{
-  border: 1px solid black;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
-  color:#000;
-  background-color:#2a4580;
 }
 
 .log_but:visited{
-	color: #000;
+
 }
 
 .menu{
@@ -159,7 +127,6 @@ hgroup{
 
 span{
   font-size: 12px;
-  color: #2a4580;
 }
 
 @media (max-width: 1000px) {
@@ -174,7 +141,6 @@ span{
   }
 
   .menu_bar[show="true"]{
-    background-color: #2a4580;
     display: flex;
     position: fixed;
     top: 50px;

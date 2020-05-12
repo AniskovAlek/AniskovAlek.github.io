@@ -3,112 +3,152 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width,user-scalable=no"/>
-	<script type="text/javascript" src="script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Woozer</title>
+
+	<script src="assets/js/ie/html5shiv.js"></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/ie9.css" />
+	<link rel="stylesheet" href="style.css"/>
+
+<title>Woozer</title>
 </head>
-<body ng-app="myApp" ng-controller="customersCtrl" ng-init="auth=null">
-	<div class="content2">
-	<aside class="side_bar">
-		<div class="htag">
-			<a href="">#ТутДолжныБытьХештеги</a>
-			<a href="">#но_они_никуда_не_ведут</a>
-			<a href="">#пчяэенн</a>
-			<a href="">#этоХештег</a>
-			<a href="">#иЭтоТоже</a>
-		</div>
-		<span>&copy; А это копирайт!</span>
-	</aside>
-	</div>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top d-flex" id="header" >
-    <a href="index.html" class="navbar-brand">
-      <img src="woozer.png" class="img">
-    </a>
-		<form class="form-inline flex-grow-1 d-flex">
-			<input class="form-control mr-sm-2 flex-grow-1" type="text" placeholder="Искать">
-			<button class="btn btn-info" type="submit">Search</button>
-		</form>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-		<ul class="navbar-nav" ng-show="auth==null">
-			 <li class="nav-item">
-				 <button class="btn btn-info" role="button" ng-click="register();">Зарег.</a>
-			 </li>
-			 <li class="nav-item">
-				 <button class="btn btn-info" role="button" ng-click="myfunction();">Войти</button>
-			 </li>
-	  </ul>
-		<span ng-show="auth!=null">{{pers.username}}</span>
-</nav>
+
+
+<div ng-app="myApp" ng-controller="customersCtrl" ng-init="auth=null">
+	<header id="header" >
+		<a href="index.html" >
+			<img src="woozer.png" class="img" >
+		</a>
+		<nav class="main">
+			<ul>
+				<li class="search">
+					<a class="fa-search" href="#search">Search</a>
+					<form id="search" >
+						<input type="text" ng-keypress="ttt($event)"placeholder="Искать"/>
+					</form>
+				</li>
+			</ul>
+		</nav>
+		<nav class="links">
+			<ul>
+				<li><a>Главная</a></li>
+				<li><a>Популярное</a></li>
+				<li><a>Горячее</a></li>
+				<li><a role="button" ng-click="register();" ng-show="auth==null">Регистрация</a></li>
+				<li><a role="button" ng-click="myfunction();" ng-show="auth==null">Вход</a></li>
+				<li><a ng-show="auth!=null" role="button" ng-click="littlefun();">{{pers.username}}</a></li>
+			</ul>
+		</nav>
+	</header>
+
 <div class="testing d-flex flex-column" ng-show="show_input_login">
-<span class="header_login">Войти</span>
-<input class="form-control" ng-model="login" placeholder="Логин"></input></br>
-<input class="form-control" ng-model="password" placeholder="Пароль"></input></br>
-<button class="btn btn-info" role="button" ng-click="logining(login,password);">Подтвердить</button>
+	<span class="header_login"><h1>Войти</h1></span>
+		<input class="form-control" ng-model="login" placeholder="Логин"></input>
+		<input class="form-control" ng-model="password" placeholder="Пароль"></input>
+	<button class="button big fit" role="button" ng-click="logining(login,password);">Подтвердить</button>
 </div>
+
 <div class="testing d-flex flex-column" ng-show="show_input_register">
-<span class="header_login">Зарегистрироваться</span>
-<input class="form-control" ng-model="login" placeholder="Логин"></input></br>
-<input class="form-control" ng-model="password" placeholder="Пароль"></input></br>
-<button class="btn btn-info" role="button" ng-click="registering(login,password);">Подтвердить</button>
+	<span class="header_login"><h1>Зарегистрироваться</h1></span>
+		<input class="form-control" ng-model="login" placeholder="Логин"></input>
+		<input class="form-control" ng-model="password" placeholder="Пароль"></input>
+	<button class="button big fit" role="button" ng-click="registering(login,password);">Подтвердить</button>
 </div>
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-$http.get("http://localhost:1337/?query=list")
-.then(function (response) {
-	$scope.bl = response.data;
-});
 
-$scope.show_input_login=false;
-$scope.myfunction=function(){
-$scope.show_input_register=false;
-$scope.show_input_login=!$scope.show_input_login;
-}
+<div id="wrapper">
+<div id="main">
 
-$scope.show_input_register=false;
-$scope.register=function(){
-$scope.show_input_login=false;
-$scope.show_input_register=!$scope.show_input_register;
-}
+	<article class="post" ng-repeat="x in bl.blogs" ng-show="show_content">
+		<header>
+			<div class="title">
+				<h2><a href="#">{{x.header}}</a></h2>
+			</div>
+			<div class="meta">
+				<time class="published">{{x.time}}</time>
+				<a href="#" class="author"><span class="name">{{x.span}}</span><img src="images/avatar.jpg" alt="" /></a>
+			</div>
+		</header>
+		<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+		<p>{{x.article}}</p>
+		<footer>
+			<ul class="actions">
+				<li><a href="#" class="button big">Продолжить чтение</a></li>
+			</ul>
+		</footer>
+	</article>
 
-$scope.logining=function(login,password){
-	var str="http://localhost:1337/?query=login&login="+login+"&password="+password;
-	$http.get(str)
-	.then(function (response) {
-		$scope.pers=response.data;
-		$scope.auth=$scope.pers.id;
-		$scope.show_input_login=false;
-	});
-};
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="#">Рандомный пост</a></h2>
+				<p>Ляляляляляллялялля</p>
+			</div>
+			<div class="meta">
+				<time class="published" datetime="2015-10-25">October 25, 2015</time>
+				<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
+			</div>
+		</header>
+		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 
-$scope.registering=function(login,password){
-	var str="http://localhost:1337/?query=register&login="+login+"&password="+password;
-	$http.get(str)
-	.then(function (response) {
-		$scope.pers=response.data;
-		$scope.auth=$scope.pers.id;
-		$scope.show_input_register=false;
-	});
-};
 
-});
-</script>
-  <div class="content" id="con" >
-		<div class="blog" ng-repeat="x in bl.blogs">
-			<span>{{x.span}}</span>
-			<time>{{x.time}}</time>
-			<header class="">{{x.header}}<header>
-			<article>{{x.article}}<article>
-			<a href ={{x.a}}>Подробнее</a>
-		</div>
-  </div>
+	</article>
+
+
+
+	<ul class="actions pagination">
+		<li><a href="" class="disabled button big previous">предыдущая</a></li>
+		<li><a href="#" class="button big next">следующая</a></li>
+	</ul>
+
+</div>
+
+<section id="sidebar">
+
+	<section id="intro">
+		<header>
+			<h2>WOOZER</h2>
+			<p>какой-то текст</a></p>
+		</header>
+	</section>
+</section>
+<section>
+
+				<div class="htag">
+					<a href="">#ТутДолжныБытьХештеги</a>
+					<a href="">#но_они_никуда_не_ведут</a>
+					<a href="">#пчяэенн</a>
+					<a href="">#этоХештег</a>
+					<a href="">#иЭтоТоже</a>
+				<span>&copy; А это копирайт!</span>
+			</aside>
+		</article>
+
+<section id="footer">
+	<ul class="icons">
+		<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+		<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+		<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+	</ul>
+</section>
+</div>
+</div>
+
+
+
+<script src="script.js"></script>
+
+<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/ie/respond.min.js"></script>
+	<script src="assets/js/main.js"></script>
+
 </body>
 </html>
